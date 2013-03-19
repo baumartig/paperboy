@@ -1,0 +1,1058 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"reRe",
+				"recipeRefText"
+			],
+			[
+				"append",
+				"appendChild"
+			],
+			[
+				"re",
+				"recipeRef"
+			],
+			[
+				"jo",
+				"jobsMenu"
+			],
+			[
+				"mai",
+				"mainOptions"
+			],
+			[
+				"m",
+				"mainMenu"
+			],
+			[
+				"sm",
+				"smtpServer"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"ec",
+				"execJob"
+			],
+			[
+				"e",
+				"excTime"
+			],
+			[
+				"ti",
+				"titleFilter"
+			],
+			[
+				"de",
+				"descriptionFilter"
+			],
+			[
+				"user",
+				"userRecipes"
+			],
+			[
+				"loa",
+				"loadBuiltinRecipes"
+			],
+			[
+				"bui",
+				"builtinPath"
+			],
+			[
+				"tup",
+				"tuples"
+			],
+			[
+				"N",
+				"notIdx"
+			],
+			[
+				"Bad",
+				"badIdx"
+			],
+			[
+				"noI",
+				"notIdx"
+			],
+			[
+				"ba",
+				"badIdx"
+			],
+			[
+				"retur",
+				"returnValue"
+			],
+			[
+				"reV",
+				"returnValue"
+			],
+			[
+				"RE7",
+				"RE7_PARTICIPATION_SECTION"
+			],
+			[
+				"RI",
+				"RISK_TO_SECTION"
+			],
+			[
+				"RE",
+				"RE7_PARTICIPATION"
+			],
+			[
+				"S",
+				"SECT_POS"
+			],
+			[
+				"SEC",
+				"SECT_POS"
+			],
+			[
+				"SE",
+				"SECT_COB"
+			],
+			[
+				"curreTeFoI",
+				"currentTeamFolderId"
+			],
+			[
+				"if",
+				"if"
+			],
+			[
+				"condi",
+				"condition"
+			],
+			[
+				"pat",
+				"pathelement"
+			],
+			[
+				"cla",
+				"classpath"
+			],
+			[
+				"pri",
+				"printout"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"p",
+				"printout"
+			],
+			[
+				"pr",
+				"printout"
+			],
+			[
+				"a",
+				"attribute"
+			],
+			[
+				"kw",
+				"kw: kw"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "recipes_handler.py",
+			"settings":
+			{
+				"buffer_size": 1090,
+				"line_ending": "Unix",
+				"name": "def"
+			}
+		},
+		{
+			"file": "settings.py",
+			"settings":
+			{
+				"buffer_size": 815,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "paperboy-config.py",
+			"settings":
+			{
+				"buffer_size": 4894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "xml_jobs_handler.py",
+			"settings":
+			{
+				"buffer_size": 1009,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "xml_settings_handler.py",
+			"settings":
+			{
+				"buffer_size": 2690,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/settings.xml",
+			"settings":
+			{
+				"buffer_size": 426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mail_handler.py",
+			"settings":
+			{
+				"buffer_size": 2134,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 180.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Short Tag"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"GOto",
+				"Goto Documentation"
+			],
+			[
+				"Goto",
+				"Goto Documentation"
+			],
+			[
+				"Install ",
+				"Package Control: Install Package"
+			],
+			[
+				"open",
+				"Show TODOs in project and open files"
+			],
+			[
+				"Todo",
+				"Show TODOs in project and open files"
+			],
+			[
+				"PaCOn",
+				"Package Control: Install Package"
+			],
+			[
+				"PaCon",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"PacCon",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Packe",
+				"Package Control: Install Package"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL (Rails)"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 129.0,
+		"history":
+		[
+			"help",
+			"toggle_comment",
+			"sidebar"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/david/Dropbox/development/py-paperboy/settings_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/data/jobs.xml",
+		"/home/david/Dropbox/development/py-paperboy/job.py",
+		"/home/david/Dropbox/development/py-paperboy/jobs_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/builtin_recipes_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/mail_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/data/settings.xml",
+		"/home/david/Dropbox/development/py-paperboy/settings.py",
+		"/home/david/Dropbox/development/py-paperboy/xml_settings_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/paperboy.py",
+		"/home/david/Dropbox/development/py-paperboy/xml_jobs_handler.py",
+		"/home/david/Dropbox/development/py-paperboy/data/settings.py",
+		"/opt/calibre/resources/builtin_recipes.xml",
+		"/home/david/Dropbox/development/py-paperboy/.gitignore",
+		"/home/david/Dropbox/development/py-paperboy/jod.py",
+		"/home/david/Dropbox/development/py-paperboy/data/configuration.xml",
+		"/home/david/Dropbox/development/py-paperboy/parser.py",
+		"/home/david/Dropbox/development/py-paperboy/recipe.py",
+		"/home/david/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/david/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/list2.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/mimic.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/list1.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/solution/list2.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/string2.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/solution/string2.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/string1.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/solution/string1.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/basic/solution/list1.py",
+		"/media/Windows/Users/braeutigam/Dropbox/development/google-python-exercises/exercises.sublime-project",
+		"/C/Users/braeutigam/Dropbox/development/google-python-exercises/basic/string1.py",
+		"/C/Program Files/Sublime Text 2/Pristine Packages/Python.sublime-package",
+		"/Y/reVal-server.log",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.pyc",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.py",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/SublimeCodeIntel/SublimeCodeIntel.py",
+		"/C/Program Files/Sublime Text 2/sublime_plugin.py",
+		"/C/Program Files/Sublime Text 2/_ctypes.pyd",
+		"/C/Program Files/Sublime Text 2/PackageSetup.py",
+		"/C/Users/braeutigam/itfactum/seu/eclipse-j2ee/eclipse.ini",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/testRes/version-local-9/META-INF/MANIFEST.MF",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/rre_update_database.sql",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/rre_update_database-hsql.sql",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/cob_update_database.sql",
+		"/C/reval_server/10.1.2/j2ee/home/reVal-server.log",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/cob_update_database-hsql.sql",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/cob_update_database-grant.sql",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-rre/rre_update_database.sql",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-pi_sp/definitions/offer-definition.xml",
+		"/C/reval-build/win32.win32.x86/rre-admin-client/reVal-studio-admin.ini",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-pi_usa/rules/decisionpanel_initial.xml",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-energy/jsrc/Find Results",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-energy/jsrc/Ras_limits.java",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-31/jsrc/Complete.java",
+		"/C/Users/braeutigam/itfactum/Workspaces/runtime-reValclient-rrl.product/553/version-local-31/jsrc/FileWithAnError.java",
+		"/D/Neues Textdokument.txt",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-clean/db/reval-3_1_1_0-migrate.sql",
+		"/C/reval-build/win32.win32.x86/reval-client/readme.txt",
+		"/C/Users/braeutigam/itfactum/seu/eclipse-j2ee-32bit/eclipse.ini",
+		"/C/reval-build/10.1.2/j2ee/home/applications/reval-server/readme.txt",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-clean/reval-shared/src/java/com/itfactum/util/FileUtil.java",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-clean/reval-server-oracle/src/com/hannoverre/reval/server/persistence/ResourceVO.java",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/db/reval-3_1_1_0-migrate.sql",
+		"/Z/reval-client-2.0.10.0/reval-client/admin-client/configuration/config.ini",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-clean/reval-server-oracle/test/applicationContext-test.xml",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww-clean/reval-service/src/com/hannoverre/reval/service/IufCalculationResultTO.java",
+		"/C/reval-build/10.1.2/j2ee/home/applications/reval-server/reval-3_1_1_0-migrate.sql",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/reval-client-uw/reValclient-uw.product",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/reval-engine/src/com/hannoverre/reval/engine/AbstractEngine.java",
+		"/C/Users/braeutigam/itfactum/development/hr-reval-ww_svn/build.xml",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/braeutigam/AppData/Roaming/Sublime Text 2/Packages/Java/Ant.sublime-build",
+		"/home/braeutigam/itfactum/development/hr-reval-ww-clean/com.hannoverre.reval.rrl.ui/plugin.xml_gen",
+		"/media/oraapp/reVal-server.log",
+		"/home/braeutigam/itfactum/development/hr-reval-ww-clean/com.hannoverre.reval.rrl.ui/build.properties",
+		"/home/braeutigam/itfactum/development/hr-reval-ww-clean/hr-reval-rcpclient/build.properties",
+		"/home/braeutigam/.log",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww-cob/model.xml",
+		"/media/RevalDropin/win32.win32.x86/eclipse/configuration/reVal-studio.log",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww-cob/cob_update_database-hsql.sql",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww-cob/cob_update_database.sql",
+		"/home/braeutigam/seu/reval_server/10.1.2/j2ee/home/reVal-server.log",
+		"/home/braeutigam/.teamviewer/7/dosdevices/c:/users/braeutigam/Anwendungsdaten/TeamViewer/TeamViewer7_Logfile.log",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww_svn/COB.txt",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww_svn/COB Umstellung.txt",
+		"/home/braeutigam/itfactum/seu/squirrel/squirrel-sql.sh",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/Validierung.txt",
+		"/home/braeutigam/seu/eclipse-xtext-32bit/configuration/1335523725510.log",
+		"/home/braeutigam/.config/sublime-text-2/Packages/User/Plain text.sublime-settings",
+		"/home/braeutigam/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/braeutigam/.shortcuts/hs_err_pid7475.log",
+		"/home/braeutigam/seu/eclipse-xtext/eclipse.sh",
+		"/home/braeutigam/seu/eclipse-xtext/configuration/1335361664955.log",
+		"/home/braeutigam/seu/eclipse-j2ee-32bit/eclipse.sh",
+		"/home/braeutigam/seu/eclipse-xtext/configuration/1335361166821.log",
+		"/host/Users/braeutigam/Downloads/86/rules/form_set_occupancy.xml",
+		"/var/tmp/kdecache-braeutigam/krun/5859.0.reVal-studio-admin.ini",
+		"/var/tmp/kdecache-braeutigam/krun/5831.0.reVal-studio-admin.ini",
+		"/var/tmp/kdecache-braeutigam/krun/22271.0.reVal-server.log",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-engine-commons/build.xml",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/build.xml",
+		"/home/braeutigam/seu/myenv.sh",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/build.sh",
+		"/home/braeutigam/ENG108/rules/re7_sync.xml",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/Verbesserungen.txt",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/COB Umstellung.txt",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/hr-reval-rcpclient/src/com/hanoverre/reval/client/editors/riskEditor/Re7ShadowModelClientUtil.java",
+		"/var/tmp/kdecache-braeutigam/krun/6344.0.reVal-server.log",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/TransactionalAsyncServiceImpl.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/RiskServiceImpl.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/RiskDaoImpl.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/RiskHelper.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/GenericDaoImpl.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/Re7RefUtil.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/OfferModelHelper.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/hr-reval-rcpclient/src/com/hanoverre/reval/client/editors/RiskEditor.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-client-admin/src/com/hannoverre/reval/client/admin/LocalRiskManagement.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/TestPlan.txt",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-engine-commons/test/test/com/hannoverre/reval/model/CloneModelTester.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/hr-reval-rcpclient/src/com/hanoverre/reval/client/dialogs/RenewParticipationDialog.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/persistence/OfferVO.java",
+		"/tmp/reVal-studio.log",
+		"/host/Users/braeutigam/itfactum/development/hr-reval-ww-clean/build.sh",
+		"/home/braeutigam/Workspaces/runtime-reValclient-full.product/reVal-studio.lnc",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/bin/com/hannoverre/reval/server/persistence/OfferVO.hbm.xml",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/vo/RecentEasySectionVO.java",
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/AsyncServiceImpl.java"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"*.xml",
+			"",
+			"*.xml",
+			"-.*",
+			"",
+			"C:\\Users\\braeutigam\\Documents\\shadow\\definitions"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"recipeRef",
+			"jobsPath",
+			"raw_input",
+			"loadBuiltinRecipes",
+			"filterRecipes",
+			"self.buffer",
+			"s",
+			"mail_handler",
+			"Heise",
+			"% ",
+			"Recipe",
+			"recipes",
+			"Recipes",
+			"ctrl+s+",
+			"ctrl+s]",
+			"ctrl+s",
+			"side_bar",
+			"bar",
+			"sidebar",
+			"comment",
+			"os.",
+			"form_fa_calc_score",
+			"form_fa_calc",
+			"root.y",
+			"general:policy_details:scope_and_inclusions:liability_exclusions",
+			"'none'",
+			"'Audit (Public)'",
+			"%",
+			"emptytype",
+			"empty_type",
+			"<let varname=\"this:rate\"",
+			"<let varname=\"this:",
+			"form_AUS",
+			"default_limit",
+			"form_pml",
+			"form_pml_allocation.xml",
+			"NoClassDef",
+			"change",
+			"Reload",
+			"draw_whi",
+			"WhiteSpace",
+			"drawWhiteSpace",
+			"NoClassDefFoundError",
+			".jar",
+			"save",
+			"couldn",
+			"participation",
+			"1017",
+			"Excep",
+			"C:",
+			"c:",
+			"save(",
+			"store",
+			"doQu",
+			"doQuo",
+			"print(",
+			"print",
+			"riskMana",
+			"doPrin",
+			"EasySectionVO",
+			"EasySe",
+			"getEas",
+			"broker",
+			"Null",
+			"getRecentParticipations",
+			"otherParticipations",
+			"renew*info",
+			"renewRatingIn",
+			"renewRatingI",
+			"renew",
+			"renewRe",
+			"visible",
+			"show",
+			"Tree",
+			"tableViewer",
+			"btnSearchParticipation",
+			"tvParticipations",
+			"ParticipationsTableContentProvider",
+			"doProperties",
+			"itemProperties",
+			"ParticipationsTableContentProvider",
+			"Decision",
+			"decision",
+			"status",
+			"quote",
+			"admin",
+			"com.hann",
+			"loadModel",
+			"OfferModelHelper",
+			"load product",
+			"Open Participation",
+			"test",
+			"dummy:riskN",
+			"dummy:riskName",
+			"dummy",
+			"loadFullOfferModel",
+			"OfferModelHelper",
+			"loadFullOfferModel",
+			"647628",
+			"internalCreateRe7Par",
+			"test",
+			"CALLED openOffer",
+			"eternal",
+			"maxEntriesLocalHeap",
+			"indus",
+			"indust",
+			"indus",
+			"claims",
+			"underwriting-year",
+			"internalCreateRe7Participation",
+			"CALLED",
+			"internalCreateRe7Participation",
+			"Decode",
+			"Exception",
+			"Arrays",
+			"Closing the report failed due to an exception",
+			"OK - report generator created",
+			"OK - report risk ids loaded. Count",
+			"OK - risk",
+			"shadow",
+			"table",
+			"DATA_ARGUMENT",
+			"ECLIPSE_LINK_FILE",
+			"PORT",
+			"HOST",
+			"_env",
+			"ValidationLdap",
+			"data"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"filteredRecipies",
+			"puffer",
+			"Job",
+			"jobs",
+			"Jobs",
+			"C:\\agntctrl",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "recipes_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1090,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								859,
+								859
+							]
+						],
+						"settings":
+						{
+							"auto_name": "def",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								540,
+								540
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "paperboy-config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3572,
+								3572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1377.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "xml_jobs_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								542,
+								542
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "xml_settings_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1631,
+								1631
+							]
+						],
+						"settings":
+						{
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "data/settings.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "mail_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1018,
+								1018
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 209.0
+	},
+	"project": "py-paperboy.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"mai",
+				"mail_handler.py"
+			],
+			[
+				"sett",
+				"data/settings.xml"
+			],
+			[
+				"xml",
+				"xml_settings_handler.py"
+			],
+			[
+				"setth",
+				"settings_handler.py"
+			],
+			[
+				"job.",
+				"data/jobs.xml"
+			],
+			[
+				"job",
+				"job.py"
+			],
+			[
+				"jo",
+				"jobs_handler.py"
+			],
+			[
+				"produ",
+				"reval-client-uw/reValclient-uw.product"
+			],
+			[
+				"vali",
+				"Validierung.txt"
+			],
+			[
+				"bui",
+				"build.sh"
+			],
+			[
+				"re7shamoecli",
+				"hr-reval-rcpclient/src/com/hanoverre/reval/client/editors/riskEditor/Re7ShadowModelClientUtil.java"
+			],
+			[
+				"transactionalasyncserviceimpl",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/TransactionalAsyncServiceImpl.java"
+			],
+			[
+				"ridaim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/RiskDaoImpl.java"
+			],
+			[
+				"riserim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/RiskServiceImpl.java"
+			],
+			[
+				"genedaim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/GenericDaoImpl.java"
+			],
+			[
+				"re7refu",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/Re7RefUtil.java"
+			],
+			[
+				"rish",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/RiskHelper.java"
+			],
+			[
+				"offermohe",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/OfferModelHelper.java"
+			],
+			[
+				"rihe",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/RiskHelper.java"
+			],
+			[
+				"localrim",
+				"reval-client-admin/src/com/hannoverre/reval/client/admin/LocalRiskManagement.java"
+			],
+			[
+				"rie",
+				"hr-reval-rcpclient/src/com/hanoverre/reval/client/editors/RiskEditor.java"
+			],
+			[
+				"receee",
+				"reval-server-oracle/src/com/hannoverre/reval/server/dao/vo/RecentEasySectionVO.java"
+			],
+			[
+				"traas",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/TransactionalAsyncServiceImpl.java"
+			],
+			[
+				"asyserim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/AsyncServiceImpl.java"
+			],
+			[
+				"ridaoim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/RiskDaoImpl.java"
+			],
+			[
+				"re7shamo",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/Re7ShadowModelUtil.java"
+			],
+			[
+				"re7ut",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/Re7ShadowModelUtil.java"
+			],
+			[
+				"offervo",
+				"reval-server-oracle/src/com/hannoverre/reval/server/persistence/OfferVO.java"
+			],
+			[
+				"shado",
+				"reval-server-oracle/bin/com/hannoverre/reval/server/persistence/ShadowEasySectionVO.hbm.xml"
+			],
+			[
+				"start",
+				"hr-reval-rcpclient/src/com/hannoverre/reval/rcpclient/StartupUtils.java"
+			],
+			[
+				"risserim",
+				"reval-server-oracle/src/com/hannoverre/reval/server/logic/RiskServiceImpl.java"
+			],
+			[
+				"renepa",
+				"hr-reval-rcpclient/src/com/hanoverre/reval/client/dialogs/RenewParticipationDialog.java"
+			],
+			[
+				"mofnin",
+				"reval-engine-commons/src/com/hannoverre/reval/model/MOfNIntegerElement.java"
+			],
+			[
+				"mapele",
+				"reval-engine-commons/src/com/hannoverre/reval/model/MapElement.java"
+			],
+			[
+				"clonem",
+				"reval-engine-commons/test/test/com/hannoverre/reval/model/CloneModelTester.java"
+			],
+			[
+				"colletes",
+				"reval-service/test/test/com/hannoverre/reval/engine/CollectionTester.java"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
