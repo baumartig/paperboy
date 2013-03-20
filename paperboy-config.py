@@ -89,8 +89,8 @@ def filterJobsLanguage():
 def newJobOption(dict, x, recipe):
 	dict[str(x)] = {"name":"[%s]%s" %(recipe.language, recipe.title), "function":createJob, "arg":[recipe.title]}
 
-def createJob(args):
-	jobs_handler.newJob(0)
+def createJob(ref):
+	jobs_handler.newJob(ref)
 	listJobs()
 
 def exitToMainMenu():
