@@ -1,6 +1,7 @@
 import subprocess
 import os
 import mail_handler
+import tempfile
 from datetime import datetime
 from settings_handler import settings
 
@@ -14,24 +15,24 @@ def execJobs(jobs):
 	except:
 		print "Executed failed"
 		return False
-	finally:
-		output = "tmp/output.mobi"
-		if os.path.isfile(output):
-			os.remove(output)
 
 def execJob(job):
 	recipe = "\"%s\".recipe" % job.recipeRef
-	output = "tmp/output.%s" % settings.format
+	output = tempfile.mkstemp(suffix="." + settings.format)	
+	outputPath = output[1]
 
-	returned = subprocess.call("ebook-convert %s %s" %(recipe,output) ,shell=True)
-	if returned != 0:
-		print "Returned: " + returned
-		return False
+	try:
+		returned = subprocess.call("ebook-convert %s %s" %(recipe,outputPath) ,shell=True)
+		if returned != 0:
+			print "Returned: " + returned
+			return False
 
-	# send the stuff
-	subject = "%s %s" % (job.recipeRef, datetime.date(datetime.now()))
-	mail_handler.sendMail(subject, "", output)
+		# send the stuff
+		subject = "%s %s" % (job.recipeRef, datetime.date(datetime.now()))
+		mail_handler.sendMail(subject, "", outputPath)
+	except Exception, e:
+		pass
 
 	# delete the tmp file
-	os.remove(output)
+	os.remove(outputPath)
 	return True
