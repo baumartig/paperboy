@@ -103,7 +103,7 @@ def settingsMenu():
 
 	# colletct options
 	optionsList = []
-	optionsList.append(newOption("Calibre folder", settings.calibreFolder, settings.setCalibreFolder))
+	optionsList.append(newOption("Builtin recipes folder", settings.calibreFolder, settings.setCalibreFolder))
 	optionsList.append(newOption("Export format", settings.format, settings.setFormat))
 	optionsList.append(newOption("Mail from", settings.mailFrom, settings.setMailFrom))
 	optionsList.append(newOption("Mail To", settings.mailTo, settings.setMailTo))
@@ -156,7 +156,7 @@ def sendmailSettings():
 	settingsMenu()
 
 def newOption(name, option, function):
-	return {"name":"%20s: %30s" %(name, str(option)), "function":editSetting, "arg": [name, function]}
+	return {"name":"%22s: %30s" %(name, str(option)), "function":editSetting, "arg": [name, function]}
 
 def clear():
 	os.system('clear')
