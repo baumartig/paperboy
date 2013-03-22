@@ -38,21 +38,41 @@ def listJobs():
 	copyListJobOptions = listJobsOptions.copy()
 
 	print "List jobs:"
-	print "Input the job number to delete it."
 
 	for (index, job) in enumerate(jobs):
 		copyListJobOptions[str(index)] = jobOption(job.recipeRef, index)
 
 	makeMenu(copyListJobOptions)
 
+def jobProperties(index):
+	clear()
+	copyJobPropertiesOptions = jobPropertiesOptions.copy()
+
+	copyJobPropertiesOptions["d"] = {"name":"delete job", "function":deleteJob, "arg":[index]}
+	job = jobs[index]
+
+	optionsList = []
+	optionsList.append({"name":"execution type: %20s" % job.executionType, "function":deleteJob})
+	optionsList.append({"name":"execution time: %20s" % job.executionTime, "function":deleteJob})
+	if not job.executionType == "daily":
+		optionsList.append({"name":"execution day : %20s" % job.executionDay, "function":deleteJob})
+
+	# append the options to the menu
+	for (x, option)	in enumerate(optionsList):
+		copyJobPropertiesOptions[str(x)] = option
+
+	print "Properties of \"%s\"" % job.recipeRef
+	makeMenu(copyJobPropertiesOptions)
+
+
 def jobOption(name, index):
-	return {"name":"%s" %(name), "function":deleteJob, "arg": [index]}
+	return {"name":"%s" %(name), "function":jobProperties, "arg": [index]}
 
 def deleteJob(index):
 	jobs_handler.deleteJob(index)
 	listJobs()
 
-def newJob(startIndex):
+def newJob(startIndex=0):
 	clear()
 	nextIndex = startIndex + 10
 	previousIndex = startIndex - 10
@@ -74,24 +94,24 @@ def newJob(startIndex):
 def filterJobsTitle():
 	newValue = raw_input("New Title Filter: ")
 	recipes_handler.titleFilter = newValue
-	newJob(0)
+	newJob()
 
 def filterJobsDescription():
 	newValue = raw_input("New Description Filter: ")
 	recipes_handler.descriptionFilter = newValue
-	newJob(0)
+	newJob()
 
 def filterJobsLanguage():
 	newValue = raw_input("New Language Filter: ")
 	recipes_handler.languageFilter = newValue
-	newJob(0)
+	newJob()
 
 def newJobOption(dict, x, recipe):
 	dict[str(x)] = {"name":"[%s]%s" %(recipe.language, recipe.title), "function":createJob, "arg":[recipe.title]}
 
 def createJob(ref):
 	jobs_handler.newJob(ref)
-	listJobs()
+	jobProperties(len(jobs) - 1)
 
 def exitToMainMenu():
 	mainMenu()
@@ -181,6 +201,8 @@ newJobOptions = {	"t":{"name":"filter title", "function":filterJobsTitle},
 					"x":{"name":"exit menu", "function":jobsMenu}}
 
 listJobsOptions = {"x":{"name":"exit menu", "function":jobsMenu}}
+
+jobPropertiesOptions = {"x":{"name":"exit menu", "function":listJobs}}
 
 executeJobsOptions = {"x":{"name":"goto main menu", "function":exitToMainMenu}}
 settingsOptions = {"x":{"name":"exit menu", "function":exitToMainMenu}}

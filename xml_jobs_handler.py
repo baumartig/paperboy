@@ -12,6 +12,7 @@ class JobsHandler(xml.sax.handler.ContentHandler):
 		self.buffer = ""
 
 	def startElement(self, name, attributes):
+		self.attributes = attributes
 		return
 
 	def characters(self, data):
@@ -21,6 +22,12 @@ class JobsHandler(xml.sax.handler.ContentHandler):
 		if name == "job":
 			# build job
 			job = Job(self.recipeRef)
+			executionType 	= self.attributes["type"]
+			executionTime	= self.attributes["time"]
+			if (not executionType == "daily"):
+				executionDay = self.attributes["day"]
+
+			job.setExecution(executionType, executionTime, executionDay)
 			self.jobs.append(job)
 
 		if name == "recipeRef":
@@ -43,7 +50,13 @@ def saveJobs(jobs):
 	tree = ET.ElementTree(root)
 
 	for job in jobs:
-		jobElem = ET.SubElement(root, "job")
+		attributes = {}
+		attributes["type"] = job.executionType
+		attributes["time"] = job.executionTime
+		if (not job.executionType == "daily"):
+			attributes["day"] = job.executionDay
+
+		jobElem = ET.SubElement(root, "job", attributes)
 
 		recipeRefElem = ET.SubElement(jobElem, "recipeRef")
 		recipeRefElem.text = job.recipeRef
