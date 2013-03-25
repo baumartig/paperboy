@@ -22,5 +22,5 @@ def loadBuiltinRecipes():
 	parser = xml.sax.make_parser()
 	handler = RecipesHandler()
 	parser.setContentHandler(handler)
-	parser.parse(settings.calibreFolder + "/resources/builtin_recipes.xml")
+	parser.parse(settings.calibreFolder + "/builtin_recipes.xml")
 	return handler.recipes
