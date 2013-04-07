@@ -12,6 +12,7 @@ def newJob(recipeRef):
 	newJob = Job(recipeRef)
 	jobs.append(newJob)
 	saveJobs(jobs)
+	return newJob
 
 def deleteJob(index):
 	jobs.pop(index)

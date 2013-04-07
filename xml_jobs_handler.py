@@ -2,6 +2,7 @@ import xml.sax, xml.sax.handler
 import xml.etree.ElementTree as ET
 from job import Job
 import os.path
+import util
 
 jobsPath = "data/jobs.xml"
 
@@ -9,23 +10,27 @@ class JobsHandler(xml.sax.handler.ContentHandler):
 
 	def __init__(self):
 		self.jobs = []
+		self.attributesList = []
 		self.buffer = ""
 
 	def startElement(self, name, attributes):
-		self.attributes = attributes
+		self.attributesList.append(attributes)
 		return
 
 	def characters(self, data):
 		self.buffer += data
 
 	def endElement(self, name):
+		attributes = self.attributesList.pop()
+
 		if name == "job":
 			# build job
 			job = Job(self.recipeRef)
-			executionType 	= self.attributes["type"]
-			executionTime	= self.attributes["time"]
+			executionType 	= attributes[u"type"]
+			executionTime	= util.parseTime(attributes[u"time"])
+			executionDay	= ""
 			if (not executionType == "daily"):
-				executionDay = self.attributes["day"]
+				executionDay = attributes[u"day"]
 
 			job.setExecution(executionType, executionTime, executionDay)
 			self.jobs.append(job)
@@ -52,9 +57,9 @@ def saveJobs(jobs):
 	for job in jobs:
 		attributes = {}
 		attributes["type"] = job.executionType
-		attributes["time"] = job.executionTime
+		attributes["time"] = util.formatTime(job.executionTime)
 		if (not job.executionType == "daily"):
-			attributes["day"] = job.executionDay
+			attributes["day"] = str(job.executionDay)
 
 		jobElem = ET.SubElement(root, "job", attributes)
 

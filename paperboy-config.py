@@ -1,10 +1,13 @@
 from settings_handler import settings
 from jobs_handler import jobs
+from job import EXECUTION_TYPES as job_execution_types
+from job import WEEKDAYS as job_weekdays
 import recipes_handler
 import jobs_handler
 import os
 import settings_handler
 import jobs_executor
+import util
 
 def makeMenu(options):
 	sortedKeys = sorted(options)
@@ -39,34 +42,93 @@ def listJobs():
 
 	print "List jobs:"
 
-	for (index, job) in enumerate(jobs):
-		copyListJobOptions[str(index)] = jobOption(job.recipeRef, index)
+	for (index, job) in enumerate(jobs, 1):
+		copyListJobOptions[str(index)] = jobOption(job.recipeRef, index - 1)
 
 	makeMenu(copyListJobOptions)
 
-def jobProperties(index):
+def jobProperties(job):
 	clear()
 	copyJobPropertiesOptions = jobPropertiesOptions.copy()
 
+	index = jobs.index(job)
+	
 	copyJobPropertiesOptions["d"] = {"name":"delete job", "function":deleteJob, "arg":[index]}
-	job = jobs[index]
 
 	optionsList = []
-	optionsList.append({"name":"execution type: %20s" % job.executionType, "function":deleteJob})
-	optionsList.append({"name":"execution time: %20s" % job.executionTime, "function":deleteJob})
+	optionsList.append({"name":"execution type: %20s" % job.executionType, "function":changeJobInterval, "arg":[job]})
+	optionsList.append({"name":"execution time: %20s" % util.formatTime(job.executionTime), "function":changeJobExecutionTime, "arg":[job]})
 	if not job.executionType == "daily":
-		optionsList.append({"name":"execution day : %20s" % job.executionDay, "function":deleteJob})
+		optionsList.append({"name":"execution day : %20s" % job.executionDay, "function":changeJobExecutionDay, "arg":[job]})
 
 	# append the options to the menu
-	for (x, option)	in enumerate(optionsList):
+	for (x, option)	in enumerate(optionsList, 1):
 		copyJobPropertiesOptions[str(x)] = option
 
 	print "Properties of \"%s\"" % job.recipeRef
 	makeMenu(copyJobPropertiesOptions)
 
 
+def changeJobInterval(job):
+	intervalOptions = {}
+	for (x, interval)	in enumerate(job_execution_types, 1):
+		intervalOptions[str(x)] = {"name":interval, "function":setJobInterval, "arg":[job, job.setExecutionType, interval]}
+	intervalOptions["x"] = {"name":"exit menu", "function":jobProperties, "arg":[job]}
+
+	makeMenu(intervalOptions)
+
+def setJobInterval(job, function, interval):
+	function(interval)
+	jobs_handler.saveJobs(jobs)
+	jobProperties(job)
+
+def changeJobExecutionTime(job):
+	new_time = None
+
+	while not new_time:
+		new_time_str = raw_input("New Execution Time: ")
+		try :
+			new_time = util.parseTime(new_time_str)
+		except:
+			new_time = None
+			print "Invalid time formate please write HH:MM"
+
+	job.setExecutionTime(new_time)
+	jobs_handler.saveJobs(jobs)
+	jobProperties(job)
+
+def changeJobExecutionDay(job):
+	if job.executionType == "weekly":
+		dayOptions = {}
+		for (x, day)	in enumerate(job_weekdays, 1):
+			dayOptions[str(x)] = {"name":day, "function":setJobExecutionDay, "arg":[job, job.setExecutionDay, day]}
+		dayOptions["x"] = {"name":"exit menu", "function":jobProperties, "arg":[job]}		
+		makeMenu(dayOptions)
+	else:
+		new_day = None
+		while not new_day:
+			new_day_str = raw_input("New execution day (1 to 30): ")
+			try :
+				new_day = int(new_day_str)
+				if new_day < 1 or new_day > 30:
+					new_day = None
+					print "Invalid day please enter a number between 1 and 30."						
+			except:
+				new_day = None
+				print "Invalid day please enter a number between 1 and 30."
+
+		job.setExecutionDay(new_day)
+		jobs_handler.saveJobs(jobs)
+		jobProperties(job)
+
+def setJobExecutionDay(job, function, day):
+	function(day)
+	jobs_handler.saveJobs(jobs)
+	jobProperties(job)
+
+
 def jobOption(name, index):
-	return {"name":"%s" %(name), "function":jobProperties, "arg": [index]}
+	return {"name":"%s" %(name), "function":jobProperties, "arg": [jobs[index]]}
 
 def deleteJob(index):
 	jobs_handler.deleteJob(index)
@@ -107,11 +169,11 @@ def filterJobsLanguage():
 	newJob()
 
 def newJobOption(dict, x, recipe):
-	dict[str(x)] = {"name":"[%s]%s" %(recipe.language, recipe.title), "function":createJob, "arg":[recipe.title]}
+	dict[str(x + 1)] = {"name":"[%s]%s" %(recipe.language, recipe.title), "function":createJob, "arg":[recipe.title]}
 
 def createJob(ref):
-	jobs_handler.newJob(ref)
-	jobProperties(len(jobs) - 1)
+	newJob = jobs_handler.newJob(ref)
+	jobProperties(newJob)
 
 def exitToMainMenu():
 	mainMenu()
@@ -146,7 +208,7 @@ def settingsMenu():
 		copySettingsOptions["s"] = {"name":"Use smtp server", "function":createDefaultSmtpSettings}
 
 	# append the options to the menu
-	for (x, option)	in enumerate(optionsList):
+	for (x, option)	in enumerate(optionsList, 1):
 		copySettingsOptions[str(x)] = option
 
 	print
@@ -179,7 +241,7 @@ def newOption(name, option, function):
 	return {"name":"%22s: %30s" %(name, str(option)), "function":editSetting, "arg": [name, function]}
 
 def clear():
-	os.system('clear')
+	# os.system('clear')
 	return
 
 def executeJobs():
@@ -193,7 +255,8 @@ mainOptions = {	"1":{"name":"jobs", "function":jobsMenu},
 				"q":{"name":"quit", "function":quit}}
 jobsOptions = {	"1":{"name":"list jobs", "function":listJobs},
 				"2":{"name":"new job", "function":newJob, "arg":[0]},
-				"x":{"name":"exit menu", "function":exitToMainMenu}}
+				"x":{"name":"exit menu", "function":exitToMainMenu}
+				}
 
 newJobOptions = {	"t":{"name":"filter title", "function":filterJobsTitle},
 					# "d":{"name":"filter description", "function":filterJobsDescription},
