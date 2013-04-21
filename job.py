@@ -9,6 +9,8 @@ class Job:
 		self.recipeRef = recipeRef.strip()
 		self.executionType 	= "daily"
 		self.executionTime	= util.parseTime("11:00")
+		self.isExecuting	= False
+
 
 	def setExecution(self, type, time, day=None):
 		if type in EXECUTION_TYPES:
