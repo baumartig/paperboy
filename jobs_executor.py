@@ -17,14 +17,17 @@ def execJobs(jobs):
 		return False
 
 def execJob(job):
+	job.isExecuting = True
+
 	recipe = "\"%s\".recipe" % job.recipeRef
 	output = tempfile.mkstemp(suffix="." + settings.format)	
 	outputPath = output[1]
 
 	try:
-		returned = subprocess.call("ebook-convert %s %s" %(recipe,outputPath) ,shell=True)
+		returned = subprocess.call("ebook-convert %s %s" %(recipe,outputPath), shell=True)
 		if returned != 0:
 			print "Returned: " + returned
+			job.isExecuting = False			
 			return False
 
 		# send the stuff
@@ -35,4 +38,5 @@ def execJob(job):
 
 	# delete the tmp file
 	os.remove(outputPath)
+	job.isExecuting = False
 	return True

@@ -241,7 +241,7 @@ def newOption(name, option, function):
 	return {"name":"%22s: %30s" %(name, str(option)), "function":editSetting, "arg": [name, function]}
 
 def clear():
-	# os.system('clear')
+	os.system('clear')
 	return
 
 def executeJobs():
