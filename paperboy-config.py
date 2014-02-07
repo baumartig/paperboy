@@ -8,16 +8,22 @@ import os
 import settings_handler
 import jobs_executor
 import util
+import _Getch
 
 def makeMenu(options):
 	sortedKeys = sorted(options)
 	for key in sortedKeys:
 		print "%5s %s" % (key, options[key]["name"])
 
-	selection = raw_input("Selection: ")
+	print "Selection: ",
+	selection = _Getch.getch()
+	print
 	while not selection in options:
 		print "Invalid selection"
-		selection = raw_input("New selection: ")
+		print "New selection: ",
+		selection = _Getch.getch()
+		print
+
 
 	if "arg" in options[selection]:
 		options[selection]["function"](*options[selection]["arg"])
