@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"nex",
+				"nextExecution"
+			],
+			[
 				"te",
 				"testDaily"
 			],
@@ -187,7 +191,7 @@
 			"file": "executiontime_calculator.py",
 			"settings":
 			{
-				"buffer_size": 2718,
+				"buffer_size": 2795,
 				"line_ending": "Unix"
 			}
 		},
@@ -299,13 +303,7 @@
 	},
 	"console":
 	{
-		"height": 129.0,
-		"history":
-		[
-			"help",
-			"toggle_comment",
-			"sidebar"
-		]
+		"height": 129.0
 	},
 	"distraction_free":
 	{
@@ -453,7 +451,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"*.xml",
@@ -627,26 +625,26 @@
 				{
 					"buffer": 0,
 					"file": "executiontime_calculator.py",
-					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2718,
+						"buffer_size": 2795,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								969,
-								969
+								1205,
+								1205
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 216.0,
+						"translation.y": 536.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -654,7 +652,6 @@
 				{
 					"buffer": 1,
 					"file": "jobs_handler.py",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 327,
@@ -681,7 +678,6 @@
 				{
 					"buffer": 2,
 					"file": "job.py",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 993,
@@ -709,7 +705,6 @@
 				{
 					"buffer": 3,
 					"file": "util.py",
-					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 195,
@@ -771,7 +766,6 @@
 	{
 		"height": 209.0
 	},
-	"project": "py-paperboy.sublime-project",
 	"replace":
 	{
 		"height": 60.0
@@ -941,24 +935,10 @@
 		],
 		"width": 380.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"settings":
-	{
-	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 261.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }

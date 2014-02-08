@@ -6,13 +6,13 @@ class Parser:
 		self.file_path = file_path
 
 	def parse(self, file_path):
-    	tree = ET.parse(file_path)
-    	root = tree.getroot()
-    	return root
+	    	tree = ET.parse(file_path)
+    		root = tree.getroot()
+    		return root
     	# for child in root: printout(child)
 
 
 	def printout(element):
-    	print [element.tag, element.text, element.attrib]
+    		print [element.tag, element.text, element.attrib]
 
 #parse("data/configuration.xml")
