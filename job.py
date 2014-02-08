@@ -1,6 +1,6 @@
 import util
 
-EXECUTION_TYPES = {"daily", "weekly", "monthly"}
+EXECUTION_TYPES = ["daily", "weekly", "monthly"]
 WEEKDAYS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
 
 class Job:

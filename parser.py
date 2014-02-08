@@ -6,10 +6,10 @@ class Parser:
 		self.file_path = file_path
 
 	def parse(self, file_path):
-	    	tree = ET.parse(file_path)
-    		root = tree.getroot()
+    		tree = ET.parse(file_path)
+	    	root = tree.getroot()
     		return root
-    	# for child in root: printout(child)
+	    	# for child in root: printout(child)
 
 
 	def printout(element):
