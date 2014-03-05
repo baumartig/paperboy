@@ -49,7 +49,7 @@ def sendMail(subject, text, *attachmentFilePaths):
     mailServer = smtplib.SMTP('localhost')
 
   print "Sending mail"
-  mailServer.set_debuglevel(true)
+  mailServer.set_debuglevel(1)
   mailServer.sendmail(sender, recipient, msg.as_string())
   mailServer.close()
 
