@@ -8,64 +8,64 @@ jobsPath = "data/jobs.xml"
 
 class JobsHandler(xml.sax.handler.ContentHandler):
 
-	def __init__(self):
-		self.jobs = []
-		self.attributesList = []
-		self.buffer = ""
+    def __init__(self):
+        self.jobs = []
+        self.attributesList = []
+        self.buffer = ""
 
-	def startElement(self, name, attributes):
-		self.attributesList.append(attributes)
-		return
+    def startElement(self, name, attributes):
+        self.attributesList.append(attributes)
+        return
 
-	def characters(self, data):
-		self.buffer += data
+    def characters(self, data):
+        self.buffer += data
 
-	def endElement(self, name):
-		attributes = self.attributesList.pop()
+    def endElement(self, name):
+        attributes = self.attributesList.pop()
 
-		if name == "job":
-			# build job
-			job = Job(self.recipeRef)
-			executionType 	= attributes[u"type"]
-			executionTime	= util.parseTime(attributes[u"time"])
-			executionDay	= ""
-			if (not executionType == "daily"):
-				executionDay = attributes[u"day"]
+        if name == "job":
+            # build job
+            job = Job(self.recipeRef)
+            executionType     = attributes[u"type"]
+            executionTime    = util.parseTime(attributes[u"time"])
+            executionDay    = ""
+            if (not executionType == "daily"):
+                executionDay = attributes[u"day"]
 
-			job.setExecution(executionType, executionTime, executionDay)
-			self.jobs.append(job)
+            job.setexecution(executionType, executionTime, executionDay)
+            self.jobs.append(job)
 
-		if name == "recipeRef":
-			self.recipeRef = self.buffer
+        if name == "recipeRef":
+            self.recipeRef = self.buffer
 
-		self.buffer = ""
+        self.buffer = ""
 
 def loadJobs():
-	if os.path.isfile(jobsPath):
-		parser = xml.sax.make_parser()
-		handler = JobsHandler()
-		parser.setContentHandler(handler)
-		parser.parse(jobsPath)
-		return handler.jobs
-	else:
-		return []
+    if os.path.isfile(jobsPath):
+        parser = xml.sax.make_parser()
+        handler = JobsHandler()
+        parser.setContentHandler(handler)
+        parser.parse(jobsPath)
+        return handler.jobs
+    else:
+        return []
 
 def saveJobs(jobs):
-	root = ET.Element("jobs")
-	tree = ET.ElementTree(root)
+    root = ET.Element("jobs")
+    tree = ET.ElementTree(root)
 
-	for job in jobs:
-		attributes = {}
-		attributes["type"] = job.executionType
-		attributes["time"] = util.formatTime(job.executionTime)
-		if (not job.executionType == "daily"):
-			attributes["day"] = str(job.executionDay)
+    for job in jobs:
+        attributes = {}
+        attributes["type"] = job.executionType
+        attributes["time"] = util.formatTime(job.executionTime)
+        if (not job.executionType == "daily"):
+            attributes["day"] = str(job.executionDay)
 
-		jobElem = ET.SubElement(root, "job", attributes)
+        jobElem = ET.SubElement(root, "job", attributes)
 
-		recipeRefElem = ET.SubElement(jobElem, "recipeRef")
-		recipeRefElem.text = job.recipeRef
+        recipeRefElem = ET.SubElement(jobElem, "recipeRef")
+        recipeRefElem.text = job.recipeRef
 
-	tree.write(jobsPath)
+    tree.write(jobsPath)
 
-	return
+    return

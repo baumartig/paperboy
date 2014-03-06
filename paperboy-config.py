@@ -84,7 +84,7 @@ def jobProperties(job):
 def changeJobInterval(job):
 	intervalOptions = {}
 	for (x, interval)	in enumerate(job_execution_types, 1):
-		intervalOptions[str(x)] = {"name":interval, "function":setJobInterval, "arg":[job, job.setExecutionType, interval]}
+		intervalOptions[str(x)] = {"name":interval, "function":setJobInterval, "arg":[job, job.setexecutiontype, interval]}
 	intervalOptions["x"] = {"name":"exit menu", "function":jobProperties, "arg":[job]}
 
 	makeMenu(intervalOptions)
@@ -105,7 +105,7 @@ def changeJobExecutionTime(job):
 			new_time = None
 			print "Invalid time formate please write HH:MM"
 
-	job.setExecutionTime(new_time)
+	job.setexecutiontime(new_time)
 	jobs_handler.saveJobs(jobs)
 	jobProperties(job)
 
@@ -113,7 +113,7 @@ def changeJobExecutionDay(job):
 	if job.executionType == "weekly":
 		dayOptions = {}
 		for (x, day)	in enumerate(job_weekdays, 1):
-			dayOptions[str(x)] = {"name":day, "function":setJobExecutionDay, "arg":[job, job.setExecutionDay, day]}
+			dayOptions[str(x)] = {"name":day, "function":setJobExecutionDay, "arg":[job, job.setexecutionday, day]}
 		dayOptions["x"] = {"name":"exit menu", "function":jobProperties, "arg":[job]}		
 		makeMenu(dayOptions)
 	else:
@@ -129,7 +129,7 @@ def changeJobExecutionDay(job):
 				new_day = None
 				print "Invalid day please enter a number between 1 and 30."
 
-		job.setExecutionDay(new_day)
+		job.setexecutionday(new_day)
 		jobs_handler.saveJobs(jobs)
 		jobProperties(job)
 
