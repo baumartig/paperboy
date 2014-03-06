@@ -18,6 +18,12 @@ def sendMail(subject, text, *attachmentFilePaths):
   msg['To'] = recipient
   msg['Subject'] = subject
   msg.attach(MIMEText(text))
+  print "Start sending mail:"
+  print "Recipient: %s" % recipient
+  print "Sender: %s" % sender
+  print "Subject: %s" % subject
+  print "Recipient: %s" % recipient
+
   
   for attachmentFilePath in attachmentFilePaths:
     msg.attach(getAttachment(attachmentFilePath))
@@ -39,8 +45,11 @@ def sendMail(subject, text, *attachmentFilePaths):
   	  	mailServer.ehlo()
   	  	mailServer.login(gmailUser, gmailPassword)
   else:
+    print "Using sendmail"
     mailServer = smtplib.SMTP('localhost')
 
+  print "Sending mail"
+  mailServer.set_debuglevel(1)
   mailServer.sendmail(sender, recipient, msg.as_string())
   mailServer.close()
 

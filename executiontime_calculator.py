@@ -10,6 +10,12 @@ def calculateNextExecution(job):
 
 	if job.executionType == "weekly":
 		diff = WEEKDAYS.index(job.executionDay) - now.weekday()
+		print "Now: %s executionTime: %s diff: %s" % (now, executionTime, diff) 
+		if (diff < 0 and now.day < (-1 * diff)):
+			diff = diff + now.day
+			executionTime.replace(month=executionTime.month - 1)
+			
+		print "Now: %s executionTime: %s diff: %s" % (now, executionTime, diff) 
 		executionTime = executionTime.replace(day= now.day + diff)
 		
 

@@ -10,19 +10,25 @@ import jobs_executor
 import util
 import _Getch
 
-def makeMenu(options):
+def makeMenu(options, directInput=True):
 	sortedKeys = sorted(options)
 	for key in sortedKeys:
 		print "%5s %s" % (key, options[key]["name"])
 
-	print "Selection: ",
-	selection = _Getch.getch()
-	print
-	while not selection in options:
-		print "Invalid selection"
-		print "New selection: ",
+	if directInput:
+		print "Selection: ",
 		selection = _Getch.getch()
 		print
+	else:
+		selection = raw_input("Selection (commit with Enter): ")
+	while not selection in options:
+		print "Invalid selection"
+		if directInput:
+			print "New selection: ",
+			selection = _Getch.getch()
+			print
+		else:
+			selection = raw_input("New Selection: ")
 
 
 	if "arg" in options[selection]:
@@ -157,7 +163,7 @@ def newJob(startIndex=0):
 	for (recipe, x) in zip(recipes[startIndex:nextIndex], range(startIndex,nextIndex)):
 		newJobOption(copyJobOptions, x, recipe)
 
-	makeMenu(copyJobOptions)
+	makeMenu(copyJobOptions, False)
 
 def filterJobsTitle():
 	newValue = raw_input("New Title Filter: ")
