@@ -2,115 +2,121 @@ from datetime import datetime
 from datetime import timedelta
 from job import WEEKDAYS
 from job import Job
-from jobs_handler import jobs
 
-def calculateNextExecution(job):
-	now = datetime.now()
-	executionTime = datetime.now()
 
-	if job.executionType == "weekly":
-		diff = WEEKDAYS.index(job.executionDay) - now.weekday()
-		print "Now: %s executionTime: %s diff: %s" % (now, executionTime, diff) 
-		if (diff < 0 and now.day < (-1 * diff)):
-			diff = diff + now.day
-			executionTime.replace(month=executionTime.month - 1)
-			
-		print "Now: %s executionTime: %s diff: %s" % (now, executionTime, diff) 
-		executionTime = executionTime.replace(day= now.day + diff)
-		
+def calculateNextExecution(job, now=datetime.now()):
+    executionTime = now.replace()
 
-	elif job.executionType == "monthly":
-		executionTime = executionTime.replace(day = int(job.executionDay))
+    if job.executionType == "weekly":
+        diff = WEEKDAYS.index(job.executionDay) - now.weekday()
+        if diff < 0 and now.day < (-1 * diff):
+            diff += now.day
+            executionTime.replace(month=executionTime.month - 1)
 
-	# add the calculated difference
-	executionTime = executionTime.replace(hour=job.executionTime.hour,
-							minute=job.executionTime.minute)
+        executionTime = executionTime.replace(day=now.day + diff)
 
-	
-	addition = timedelta()
-	if now > executionTime:
-		#add intervall
-		if job.executionType == "daily":
-			addition = timedelta(days=1)
-		if job.executionType == "weekly":
-			addition = timedelta(weeks=1)
-		elif job.executionType == "monthly":
-			if executionTime.month < 12:
-				executionTime = executionTime.replace(month=executionTime.month + 1)
-			else:
-				executionTime = executionTime.replace(month=1)
-	# add the delta
-	executionTime = executionTime + addition
+    elif job.executionType == "monthly":
+        executionTime = executionTime.replace(day=job.executionDay)
 
-	# set the next execution date on the job
-	job.nextExecution = executionTime
+    # add the calculated difference
+    executionTime = executionTime.replace(hour=job.executionTime.hour,
+                                            minute=job.executionTime.minute,
+                                            second=job.executionTime.second,
+                                            microsecond=job.executionTime.microsecond)
+
+    addition = timedelta()
+    if now > executionTime:
+        #add interval
+        if job.executionType == "daily":
+            addition = timedelta(days=1)
+        if job.executionType == "weekly":
+            addition = timedelta(weeks=1)
+        elif job.executionType == "monthly":
+            if executionTime.month < 12:
+                executionTime = executionTime.replace(month=executionTime.month + 1)
+            else:
+                executionTime = executionTime.replace(month=1)
+    # add the delta
+    executionTime = executionTime + addition
+
+    # set the next execution date on the job
+    job.nextExecution = executionTime
+
 
 def test():
-	# testDaily()
-	# testWeekly()
-	testMonthly()
-	return
+    test_monthly()
+    test_weekly()
+    testDaily()
+    return
 
-def testMonthly():
-	job = Job("testRef")
-	now = datetime.now()
 
-	# execute later
-	addition = timedelta(hours=1)
-	job.setExecution("monthly", (now + addition).time(), now.day)
+def test_monthly():
+    print "TEST Monthly"
+    job = Job("testRef")
+    now = datetime(2014, 2, 2, 10)
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
+    # execute later
+    addition = timedelta(hours=1)
+    job.setExecution("monthly", (now + addition).time(), now.day)
 
-	# execute tomorrow
-	addition = timedelta(hours=-1)
-	job.setExecution("monthly", (now + addition).time(), now.day)
+    calculateNextExecution(job, now)
+    assert datetime(2014, 2, 2, 11) == job.nextExecution,     "Calculated wrong execution date: %s"\
+                                                               % str(job.nextExecution)
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
+    # execute tomorrow
+    addition = timedelta(hours=-1)
+    job.setExecution("monthly", (now + addition).time(), now.day)
 
-def testWeekly():
-	job = Job("testRef")
-	now = datetime.now()
+    calculateNextExecution(job, now)
+    assert datetime(2014, 3, 2, 9) == job.nextExecution,      "Calculated wrong execution date: %s"\
+                                                               % str(job.nextExecution)
+    print "OK"
 
-	# execute later
-	addition = timedelta(hours=1)
-	job.setExecution("weekly", (now + addition).time(), "So")
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
+def test_weekly():
+    print "TEST Weekly"
+    job = Job("testRef")
+    now = datetime(2014, 2, 2, 10)
 
-	# execute tomorrow
-	addition = timedelta(hours=-1)
-	job.setExecution("weekly", (now + addition).time(), "So")
+    # execute later
+    addition = timedelta(hours=1)
+    job.setExecution("weekly", (now + addition).time(), "So")
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
+    calculateNextExecution(job, now)
+    assert datetime(2014, 2, 2, 11) == job.nextExecution, "Calculated wrong execution date: %s"\
+                                                           % str(job.nextExecution)
+
+    # execute tomorrow
+    addition = timedelta(hours=-1)
+    job.setExecution("weekly", (now + addition).time(), "So")
+
+    calculateNextExecution(job, now)
+    assert datetime(2014, 2, 9, 9) == job.nextExecution,  "Calculated wrong execution date: %s"\
+                                                           % str(job.nextExecution)
+    print "OK"
+
 
 def testDaily():
-	job = Job("testRef")
-	now = datetime.now()
+    print "TEST Daily"
+    job = Job("testRef")
+    now = datetime(2014, 2, 2, 10)
 
-	# execute later
-	addition = timedelta(hours=1)
-	job.setExecution("daily", (now + addition).time())
+    # execute later
+    addition = timedelta(hours=1)
+    job.setExecution("daily", (now + addition).time())
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
+    calculateNextExecution(job, now)
+    assert datetime(2014, 2, 2, 11) == job.nextExecution, "Calculated wrong execution date: %s"\
+                                                           % str(job.nextExecution)
 
-	# execute tomorrow
-	addition = timedelta(hours=-1)
-	job.setExecution("daily", (now + addition).time())
+    # execute tomorrow
+    addition = timedelta(hours=-1)
+    job.setExecution("daily", (now + addition).time())
 
-	calculateNextExecution(job)
-	print "Current time: " + str(now)
-	print "Next execution: " + str(job.nextExecution)
-	
+    calculateNextExecution(job, now)
+    assert datetime(2014, 2, 3, 9) == job.nextExecution, "Calculated wrong execution date: %s"\
+                                                          % str(job.nextExecution)
+    print "OK"
 
-
-test()
+if __name__ == 'main':
+	test()
