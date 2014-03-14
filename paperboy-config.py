@@ -55,7 +55,7 @@ def listJobs():
 	print "List jobs:"
 
 	for (index, job) in enumerate(jobs, 1):
-		copyListJobOptions[str(index)] = jobOption(job.recipeRef, index - 1)
+		copyListJobOptions[str(index)] = jobOption(job.recipe_ref, index - 1)
 
 	makeMenu(copyListJobOptions)
 
@@ -68,16 +68,16 @@ def jobProperties(job):
 	copyJobPropertiesOptions["d"] = {"name":"delete job", "function":deleteJob, "arg":[index]}
 
 	optionsList = []
-	optionsList.append({"name":"execution type: %20s" % job.executionType, "function":changeJobInterval, "arg":[job]})
-	optionsList.append({"name":"execution time: %20s" % util.formatTime(job.executionTime), "function":changeJobExecutionTime, "arg":[job]})
-	if not job.executionType == "daily":
+	optionsList.append({"name":"execution type: %20s" % job.execution_type, "function":changeJobInterval, "arg":[job]})
+	optionsList.append({"name":"execution time: %20s" % util.formatTime(job.execution_time), "function":changeJobExecutionTime, "arg":[job]})
+	if not job.execution_type == "daily":
 		optionsList.append({"name":"execution day : %20s" % job.executionDay, "function":changeJobExecutionDay, "arg":[job]})
 
 	# append the options to the menu
 	for (x, option)	in enumerate(optionsList, 1):
 		copyJobPropertiesOptions[str(x)] = option
 
-	print "Properties of \"%s\"" % job.recipeRef
+	print "Properties of \"%s\"" % job.recipe_ref
 	makeMenu(copyJobPropertiesOptions)
 
 
@@ -110,7 +110,7 @@ def changeJobExecutionTime(job):
 	jobProperties(job)
 
 def changeJobExecutionDay(job):
-	if job.executionType == "weekly":
+	if job.execution_type == "weekly":
 		dayOptions = {}
 		for (x, day)	in enumerate(job_weekdays, 1):
 			dayOptions[str(x)] = {"name":day, "function":setJobExecutionDay, "arg":[job, job.setExecutionDay, day]}

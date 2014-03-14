@@ -118,5 +118,5 @@ def testDaily():
                                                           % str(job.nextExecution)
     print "OK"
 
-if __name__ == 'main':
+if __name__ == '__main__':
 	test()
