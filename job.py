@@ -6,6 +6,7 @@ WEEKDAYS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
 class Job:
 
 	def __init__(self, recipeRef):
+		self.id = -1
 		self.recipeRef = recipeRef.strip()
 		self.executionType 	= "daily"
 		self.executionTime	= util.parseTime("11:00")
