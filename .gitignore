@@ -3,6 +3,9 @@ test.db
 
 *.py[cod]
 
+# shelves
+*.db
+
 # C extensions
 *.so
 
@@ -36,3 +39,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#idea
+.idea

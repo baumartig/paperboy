@@ -1,7 +1,7 @@
 import shelve
 from job import Job
 
-dbName = "data/jobs.shelve"
+dbName = "data/jobs.db"
 
 
 def loadJobs():

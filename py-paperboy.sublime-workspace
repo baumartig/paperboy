@@ -4,8 +4,16 @@
 		"selected_items":
 		[
 			[
-				"nex",
-				"nextExecution"
+				"lo",
+				"loadedJobs"
+			],
+			[
+				"loa",
+				"loadJobs"
+			],
+			[
+				"jo",
+				"job_2"
 			],
 			[
 				"te",
@@ -48,10 +56,6 @@
 				"recipeRef"
 			],
 			[
-				"jo",
-				"jobsMenu"
-			],
-			[
 				"mai",
 				"mainOptions"
 			],
@@ -82,10 +86,6 @@
 			[
 				"user",
 				"userRecipes"
-			],
-			[
-				"loa",
-				"loadBuiltinRecipes"
 			],
 			[
 				"bui",
@@ -188,51 +188,44 @@
 	"buffers":
 	[
 		{
-			"file": "executiontime_calculator.py",
+			"file": "jobs_handler.py",
 			"settings":
 			{
-				"buffer_size": 2795,
+				"buffer_size": 1062,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "jobs_handler.py",
+			"contents": "Searching 30 files for \"jobs_handler\" (case sensitive)\n\nC:\\Users\\braeutigam\\development\\paperboy\\jobs_handler.py:\n    1: import xml_jobs_handler\n    2  from job import Job\n    3  \n    4  \n    5  def loadJobs():\n    6: 	return xml_jobs_handler.loadJobs()\n    7  \n    8  def saveJobs(jobs):\n    9: 	xml_jobs_handler.saveJobs(jobs)\n   10  \n   11  def newJob(recipeRef):\n\nC:\\Users\\braeutigam\\development\\paperboy\\paperboy-config.py:\n    1  from settings_handler import settings\n    2: from jobs_handler import jobs\n    3  from job import EXECUTION_TYPES as job_execution_types\n    4  from job import WEEKDAYS as job_weekdays\n    5  import recipes_handler\n    6: import jobs_handler\n    7  import os\n    8  import settings_handler\n    .\n   92  def setJobInterval(job, function, interval):\n   93  	function(interval)\n   94: 	jobs_handler.saveJobs(jobs)\n   95  	jobProperties(job)\n   96  \n   ..\n  107  \n  108  	job.setExecutionTime(new_time)\n  109: 	jobs_handler.saveJobs(jobs)\n  110  	jobProperties(job)\n  111  \n  ...\n  131  \n  132  		job.setExecutionDay(new_day)\n  133: 		jobs_handler.saveJobs(jobs)\n  134  		jobProperties(job)\n  135  \n  136  def setJobExecutionDay(job, function, day):\n  137  	function(day)\n  138: 	jobs_handler.saveJobs(jobs)\n  139  	jobProperties(job)\n  140  \n  ...\n  144  \n  145  def deleteJob(index):\n  146: 	jobs_handler.deleteJob(index)\n  147  	listJobs()\n  148  \n  ...\n  185  \n  186  def createJob(ref):\n  187: 	newJob = jobs_handler.newJob(ref)\n  188  	jobProperties(newJob)\n  189  \n\nC:\\Users\\braeutigam\\development\\paperboy\\paperboy.py:\n    1: import jobs_handler\n    2  import time\n    3  import jobs_executor\n    .\n   12  \n   13  \n   14: jobs = jobs_handler.loadJobs()\n   15  print \"Welcome to the paperboy server\"\n   16  \n\n13 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 327,
+				"buffer_size": 1774,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "paperboy.py",
+			"settings":
+			{
+				"buffer_size": 1058,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "shelve_job_handler.py",
+			"settings":
+			{
+				"buffer_size": 488,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "job.py",
 			"settings":
 			{
-				"buffer_size": 993,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "paperboy-config.py",
-			"settings":
-			{
-				"buffer_size": 8540,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_Getch.py",
-			"settings":
-			{
-				"buffer_size": 845,
-				"line_ending": "Unix",
-				"name": "class _Getch:"
-			}
-		},
-		{
-			"file": "util.py",
-			"settings":
-			{
-				"buffer_size": 195,
+				"buffer_size": 1008,
 				"line_ending": "Unix"
 			}
 		}
@@ -240,9 +233,17 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 58.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
 			[
 				"Snippet: ",
 				"Snippet: Short Tag"
@@ -254,10 +255,6 @@
 			[
 				"",
 				"Package Control: List Packages"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"Install",
@@ -316,11 +313,10 @@
 				"Set Syntax: SQL (Rails)"
 			]
 		],
-		"width": 392.0
+		"width": 400.0
 	},
 	"console":
 	{
-		"height": 129.0
 		"height": 129.0,
 		"history":
 		[
@@ -340,6 +336,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/braeutigam/development/paperboy/executiontime_calculator.py",
+		"/C/Users/braeutigam/development/paperboy/jobs_handler.py",
+		"/C/Users/braeutigam/development/paperboy/job.py",
+		"/C/Users/braeutigam/development/paperboy/util.py",
+		"/C/Users/braeutigam/development/paperboy/_Getch.py",
+		"/C/Users/braeutigam/development/paperboy/paperboy-config.py",
 		"/home/braeutigam/development/paperboy/job.py",
 		"/home/braeutigam/development/paperboy/xml_jobs_handler.py",
 		"/home/braeutigam/development/paperboy/recipes_handler.py",
@@ -461,23 +463,18 @@
 		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/RiskServiceImpl.java",
 		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/RiskDaoImpl.java",
 		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/RiskHelper.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/GenericDaoImpl.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/Re7RefUtil.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/logic/risk/OfferModelHelper.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/hr-reval-rcpclient/src/com/hanoverre/reval/client/editors/RiskEditor.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-client-admin/src/com/hannoverre/reval/client/admin/LocalRiskManagement.java",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/TestPlan.txt",
-		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-engine-commons/test/test/com/hannoverre/reval/model/CloneModelTester.java"
+		"/home/braeutigam/itfactum/development/hr-reval-ww_svn/reval-server-oracle/src/com/hannoverre/reval/server/dao/impl/GenericDaoImpl.java"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"*",
 			"*.xml",
 			"",
 			"*.xml",
@@ -491,6 +488,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"\"data/jobs.shelve\"",
+			"jobs_handler",
 			"isExecuting",
 			"recipeRef",
 			"jobsPath",
@@ -616,9 +615,7 @@
 			"DATA_ARGUMENT",
 			"ECLIPSE_LINK_FILE",
 			"PORT",
-			"HOST",
-			"_env",
-			"ValidationLdap"
+			"HOST"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -626,6 +623,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"dbName",
 			"filteredRecipies",
 			"puffer",
 			"Job",
@@ -648,19 +646,141 @@
 			[
 				{
 					"buffer": 0,
-					"file": "executiontime_calculator.py",
+					"file": "jobs_handler.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2795,
+						"buffer_size": 1062,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 231.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1774,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										132,
+										144
+									],
+									[
+										230,
+										242
+									],
+									[
+										301,
+										313
+									],
+									[
+										486,
+										498
+									],
+									[
+										665,
+										677
+									],
+									[
+										819,
+										831
+									],
+									[
+										943,
+										955
+									],
+									[
+										1067,
+										1079
+									],
+									[
+										1212,
+										1224
+									],
+									[
+										1326,
+										1338
+									],
+									[
+										1441,
+										1453
+									],
+									[
+										1573,
+										1585
+									],
+									[
+										1669,
+										1681
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1686,
+								1686
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 451.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "paperboy.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								879,
+								879
 							]
 						],
 						"settings":
@@ -669,27 +789,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 536.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "jobs_handler.py",
+					"buffer": 3,
+					"file": "shelve_job_handler.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 327,
+						"buffer_size": 488,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								58,
-								58
+								391,
+								391
 							]
 						],
 						"settings":
@@ -700,24 +820,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "job.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 993,
+						"buffer_size": 1008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								937,
-								937
+								175,
+								175
 							]
 						],
 						"settings":
@@ -730,94 +850,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "paperboy-config.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "_Getch.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 845,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								115,
-								115
-							]
-						],
-						"settings":
-						{
-							"auto_name": "class _Getch:",
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "util.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -865,7 +897,7 @@
 	"project": "py-paperboy.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1048,7 +1080,6 @@
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 261.0,
-	"status_bar_visible": true
 	"status_bar_visible": true,
 	"template_settings":
 	{
