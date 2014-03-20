@@ -9,5 +9,7 @@ Please be aware that this project is merely in an alpha stage so be aware that t
 
 ## TODO
 
-- [ ] Allow job individual execution time.
-- [ ] Implement daily, weekly or monthly intervals
+- [x] Allow job individual execution time.
+- [x] Implement daily, weekly or monthly intervals
+- [ ] Implement User management
+- [ ] Implement a web frontend
