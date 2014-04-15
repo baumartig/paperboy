@@ -24,26 +24,26 @@ def sendMail(subject, text, *attachmentFilePaths):
   print "Subject: %s" % subject
   print "Recipient: %s" % recipient
 
-  
+
   for attachmentFilePath in attachmentFilePaths:
     msg.attach(getAttachment(attachmentFilePath))
 
   if settings.useSmtp():
     if "port" in settings.smtpServer:
-    	mailServer = smtplib.SMTP(	settings.smtpServer["address"],
-    								settings.smtpServer["port"])
+        mailServer = smtplib.SMTP(    settings.smtpServer["address"],
+                                    settings.smtpServer["port"])
     else:
-    	mailServer = smtplib.SMTP(settings.smtpServer["address"])
+        mailServer = smtplib.SMTP(settings.smtpServer["address"])
 
     if "security" in settings.smtpServer:
-    	if settings.smtpServer["security"] == "starttls":
-    		# handle starttls
-  	  	gmailUser = settings.smtpServer["login"]
-    		gmailPassword = settings.smtpServer["password"]
-    		mailServer.ehlo()
-  	  	mailServer.starttls()
-  	  	mailServer.ehlo()
-  	  	mailServer.login(gmailUser, gmailPassword)
+        if settings.smtpServer["security"] == "starttls":
+            # handle starttls
+            gmailUser = settings.smtpServer["login"]
+            gmailPassword = settings.smtpServer["password"]
+            mailServer.ehlo()
+            mailServer.starttls()
+            mailServer.ehlo()
+            mailServer.login(gmailUser, gmailPassword)
   else:
     print "Using sendmail"
     mailServer = smtplib.SMTP('localhost')
