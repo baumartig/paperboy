@@ -1,7 +1,8 @@
 paperboy
 ========
 
-Server for compiling and sending the calibre news to a device via e-mail.
+Have you ever wanted to send the calibre recipies to your reading device without the need to have calibre up and running all the time. And probably you have a litle server or rasperry pi laying around which dont have the horsepower to run a X11 desktop environment.
+Than "paperboy" is the solution. It allowes you to define jobs with the calibre recipies of your favorite site, and sends them to your device daily, weekly or monthly on any given time. So you may read what you want when you want.
 
 This application consists of two tools. The paperboy.py server application which sends all defined jobs. And the paperboy-config.py configuration application, to change the settings and delete or create new jobs.
 
@@ -25,17 +26,30 @@ Or you can checkout the repositrory via git, which is the most up to date versio
 git clone https://github.com/baumartig/paperboy.git
 ``
 
-Now that you got paperboy you need to configure it properly. Therefor you need to start `python paperboy-config.py` and
-proceed like this:
+Now that you got paperboy you need to configure it properly. Therefor you need to start `python paperboy-config.py`.
 
-- Press 2 to get into the settings
+Paperboy Config
+---------------
 
-In the settings menu:
+The "paperboy-config" application is used to configure the server options and create and edit new jobs.
 
-- Press 1 to edit the "calibre" recipies folder (default should be "/opt/calibre/resources")
-- Press 2 to change the prefered output format (for example pdf, mobi or epub)
-- Press 3 to change the from adress which is used for the outgoing e-mails
-- Press 4 to change the recipients e-mail adress
+The main menu has the following options:
+
+- 1 the menu for managing the jobs
+- 2 to get into the settings
+- 3 to execute all configured jobs (to test the setup)
+
+### Managing the jobs
+
+
+### The settings menu
+
+The settings menu consists of the following options:
+
+- 1 to edit the "calibre" recipies folder (default should be "/opt/calibre/resources")
+- 2 to change the prefered output format (for example pdf, mobi or epub)
+- 3 to change the from adress which is used for the outgoing e-mails
+- 4 to change the recipients e-mail adress
 
 If you want to use an smtp server instead of the standard sendmail you enable it by pressing "s" in the settings menu.
 This presents you with these aditional options:
@@ -46,18 +60,15 @@ This presents you with these aditional options:
 - 8 the smtp server login
 - 9 the smtp server password
 
-Job handling
-------------
-
-
-
-
-## TODO
+TODO
+----
 
 - [x] Allow job individual execution time.
 - [x] Implement daily, weekly or monthly intervals
 - [ ] Implement User management
 - [ ] Allow multiple e-mail adresses, and allow to chose the e-mail adress for a job
 
+LICENCE
+-------
 
-The project is open source under the [Apache 2.0](https://github.com/FriendCode/codebox/blob/master/LICENSE) license.
+The project is open source under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) license.
