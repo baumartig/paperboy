@@ -31,6 +31,7 @@ proceed like this:
 - Press 2 to get into the settings
 
 In the settings menu:
+
 - Press 1 to edit the "calibre" recipies folder (default should be "/opt/calibre/resources")
 - Press 2 to change the prefered output format (for example pdf, mobi or epub)
 - Press 3 to change the from adress which is used for the outgoing e-mails
@@ -38,6 +39,7 @@ In the settings menu:
 
 If you want to use an smtp server instead of the standard sendmail you enable it by pressing "s" in the settings menu.
 This presents you with these aditional options:
+
 - 5 the smtp server adress
 - 6 the smtp server port
 - 7 the smtp server security
