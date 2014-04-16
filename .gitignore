@@ -1,3 +1,6 @@
+# no testdatabase
+test.db
+
 *.py[cod]
 
 # C extensions
