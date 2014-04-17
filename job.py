@@ -37,6 +37,12 @@ class Job:
     def setExecutionDay(self, day):
         self.executionDay = day
 
+    def __eq__(self, other):
+        if isinstance(other, Job):
+            return self.id == other.id
+        else:
+            return False
+
 
 class JobException(Exception):
 

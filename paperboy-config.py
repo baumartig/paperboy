@@ -57,7 +57,7 @@ def listJobs():
     print "List jobs:"
 
     for (index, job) in enumerate(jobs, 1):
-        copyListJobOptions[str(index)] = jobOption(job.recipe_ref, index - 1)
+        copyListJobOptions[str(index)] = jobOption(job.recipeRef, index - 1)
 
     makeMenu(copyListJobOptions)
 
@@ -73,14 +73,14 @@ def jobProperties(job):
                                      "arg": [index]}
 
     optionsList = []
-    optionsList.append({"name": "execution type: %20s" % job.execution_type,
+    optionsList.append({"name": "execution type: %20s" % job.executionType,
                         "function": changeJobInterval,
                         "arg": [job]})
     optionsList.append({"name": "execution time: %20s"
-                        % util.formatTime(job.execution_time),
+                        % util.formatTime(job.executionTime),
                         "function": changeJobExecutionTime,
                         "arg": [job]})
-    if not job.execution_type == "daily":
+    if not job.executionType == "daily":
         optionsList.append({"name": "execution day : %20s" % job.executionDay,
                             "function": changeJobExecutionDay,
                             "arg": [job]})
@@ -89,7 +89,7 @@ def jobProperties(job):
     for (x, option) in enumerate(optionsList, 1):
         copyJobPropertiesOptions[str(x)] = option
 
-    print "Properties of \"%s\"" % job.recipe_ref
+    print "Properties of \"%s\"" % job.recipeRef
     makeMenu(copyJobPropertiesOptions)
 
 
@@ -131,7 +131,7 @@ def changeJobExecutionTime(job):
 
 
 def changeJobExecutionDay(job):
-    if job.execution_type == "weekly":
+    if job.executionType == "weekly":
         dayOptions = {}
         for (x, day) in enumerate(job_weekdays, 1):
             dayOptions[str(x)] = {"name": day,
@@ -226,7 +226,8 @@ def newJobOption(dict, x, recipe):
 
 def createJob(ref):
     newJob = jobs_handler.newJob(ref)
-    jobProperties(newJob)
+    loadJobs()
+    jobProperties(jobs[newJob.id])
 
 
 def exitToMainMenu():
@@ -330,6 +331,11 @@ def executeJobs():
     jobs_executor.execJobs(jobs)
     makeMenu(executeJobsOptions)
 
+
+def loadJobs():
+    global jobs
+    jobs = jobs_handler.loadJobs()
+
 mainOptions = {"1": {"name": "jobs", "function": jobsMenu},
                "2": {"name": "paperboy settings", "function": settingsMenu},
                "3": {"name": "execute jobs", "function": executeJobs},
@@ -353,6 +359,6 @@ executeJobsOptions = {"x": {"name": "goto main menu",
                             "function": exitToMainMenu}}
 settingsOptions = {"x": {"name": "exit menu", "function": exitToMainMenu}}
 
-jobs = jobs_handler.loadJobs()
-
+jobs = []
+loadJobs()
 mainMenu()

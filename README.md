@@ -22,9 +22,9 @@ After you installed all the requirements you may choose how to download paperboy
 from this [page](https://github.com/baumartig/paperboy/releases).
 Or you can checkout the repositrory via git, which is the most up to date version but may contain more bugs.
 
-``
+```
 git clone https://github.com/baumartig/paperboy.git
-``
+```
 
 Now that you got paperboy you need to configure it properly. Therefor you need to start `python paperboy-config.py`.
 
@@ -41,6 +41,19 @@ The main menu has the following options:
 
 ### Managing the jobs
 
+The jobs menu consists of the options.
+
+- 1 list all current defined jobs
+- 2 create a new job
+
+#### edit jobs
+
+
+
+#### create a job
+
+The creation menu displays a list of all recognized calibre recipies. You can traverse the list with "n" and "p". To simplify the search you are also able to filter the list depending on the language ("l") and the title ("t"). The language of the recipie is displayed in the brackets at the front of the title.
+When you found your desired recipe confirm with the creation with the corresponding index. After that you are presented with the standard job editing dialog.
 
 ### The settings menu
 
