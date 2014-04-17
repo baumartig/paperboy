@@ -51,9 +51,19 @@ def test():
     addNewJob(newJob)
     jobs = loadJobs()
     assert len(jobs) == 1
-    print jobs
     assert jobs.index(newJob) >= 0
 
+    newJob = jobs[newJob.id]
+    newJob.recipeRef = "new test"
+    saveJobs(jobs)
+    jobs = loadJobs()
+    assert newJob.recipeRef == jobs[newJob.id].recipeRef
+
+    clear()
+    jobs = loadJobs()
+    assert len(jobs) == 0
+
+    print "End test"
 
 if __name__ == "__main__":
     test()
