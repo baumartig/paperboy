@@ -1,12 +1,12 @@
 paperboy
 ========
 
-Have you ever wanted to send the calibre recipies to your reading device without the need to have calibre up and running all the time. And probably you have a litle server or rasperry pi laying around which dont have the horsepower to run a X11 desktop environment.
-Than "paperboy" is the solution. It allowes you to define jobs with the calibre recipies of your favorite site, and sends them to your device daily, weekly or monthly on any given time. So you may read what you want when you want.
+Have you ever wanted to send the Calibre recipies to your reading device without the need of having Calibre up and running all the time? And probably you have a little server or Rasperry Pi lying around which doesn't have the horsepower to run a X11 desktop environment?
+Then "paperboy" is your solution. It allows you to define jobs with the Calibre recipies of your favorite site, and sends them to your device daily, weekly or monthly on any given time. So you may read what you want when you want.
 
 This application consists of two tools. The paperboy.py server application which sends all defined jobs. And the paperboy-config.py configuration application, to change the settings and delete or create new jobs.
 
-Please be aware that this project is merely in an alpha stage so be aware that there may be lots of bugs hidden, i would appreciate if you report them. I am also open to suggestions of new features.
+Please be aware that this project is merely in an alpha stage and that there may be lots of hidden bugs, I would appreciate it if you report them. I am also open to suggestions of new features.
 
 Requirements
 ------------
@@ -39,7 +39,7 @@ The main menu has the following options:
 - 2 to get into the settings
 - 3 to execute all configured jobs (to test the setup)
 
-### Managing the jobs
+### Managing Jobs
 
 The jobs menu consists of the options.
 
@@ -55,7 +55,7 @@ The jobs menu consists of the options.
 The creation menu displays a list of all recognized calibre recipies. You can traverse the list with "n" and "p". To simplify the search you are also able to filter the list depending on the language ("l") and the title ("t"). The language of the recipie is displayed in the brackets at the front of the title.
 When you found your desired recipe confirm with the creation with the corresponding index. After that you are presented with the standard job editing dialog.
 
-### The settings menu
+### The Settings Menu
 
 The settings menu consists of the following options:
 
@@ -78,10 +78,11 @@ TODO
 
 - [x] Allow job individual execution time.
 - [x] Implement daily, weekly or monthly intervals
-- [ ] Implement User management
-- [ ] Allow multiple e-mail adresses, and allow to chose the e-mail adress for a job
+- [ ] Implement user management
+- [ ] Allow multiple e-mail addresses, and allow to chose the e-mail address for a job
 
-LICENCE
+LICENSE
 -------
 
 The project is open source under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) license.
+
