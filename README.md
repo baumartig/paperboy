@@ -12,7 +12,7 @@ Requirements
 ------------
 
 - Python 2.\*
-- calibre
+- Calibre
 - sendmail (optional, you can also use a smtp server)
 
 Setup
@@ -27,6 +27,11 @@ git clone https://github.com/baumartig/paperboy.git
 ```
 
 Now that you got paperboy you need to configure it properly. Therefor you need to start `python paperboy-config.py`.
+
+Paperboy
+--------
+
+The "paperboy" application is the standalone server application which executes all the jobs defined by the "paperboy-config" application.
 
 Paperboy Config
 ---------------
@@ -43,14 +48,21 @@ The main menu has the following options:
 
 The jobs menu consists of the options.
 
-- 1 list all current defined jobs
+- 1 list all current defined jobs, and edit it's properties
 - 2 create a new job
 
-#### edit jobs
+#### Edit Jobs
 
+To edit a existing or new job you have the following properties:
 
+- 1 The execution type (daily, weekly or monthly)
+- 2 The time when the job will be executed
+- 3 Is only visible when the type is weekly or monthly
+    - When weekly choose the weekday of the execution (Mo-Su)
+    - When monthly choose the day of the month when to execute. If a given day does not exist in the month the job will not be executed.
+- d To delete the current job.
 
-#### create a job
+#### Create a Job
 
 The creation menu displays a list of all recognized calibre recipies. You can traverse the list with "n" and "p". To simplify the search you are also able to filter the list depending on the language ("l") and the title ("t"). The language of the recipie is displayed in the brackets at the front of the title.
 When you found your desired recipe confirm with the creation with the corresponding index. After that you are presented with the standard job editing dialog.
@@ -62,7 +74,7 @@ The settings menu consists of the following options:
 - 1 to edit the "calibre" recipies folder (default should be "/opt/calibre/resources")
 - 2 to change the prefered output format (for example pdf, mobi or epub)
 - 3 to change the from adress which is used for the outgoing e-mails
-- 4 to change the recipients e-mail adress
+ to change the recipients e-mail adress
 
 If you want to use an smtp server instead of the standard sendmail you enable it by pressing "s" in the settings menu.
 This presents you with these aditional options:
