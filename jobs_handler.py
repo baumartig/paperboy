@@ -50,5 +50,5 @@ def doTest():
     shelve_job_handler.clear()
     print "Tests finished"
 
-if __name__ != "main":
+if __name__ == "__main__":
     doTest()
