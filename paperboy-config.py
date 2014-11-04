@@ -70,7 +70,7 @@ def jobProperties(job):
 
     copyJobPropertiesOptions["d"] = {"name": "delete job",
                                      "function": deleteJob,
-                                     "arg": [index]}
+                                     "arg": [job]}
 
     optionsList = []
     optionsList.append({"name": "execution type: %20s" % job.executionType,
@@ -171,8 +171,9 @@ def jobOption(name, index):
             "arg": [jobs[index]]}
 
 
-def deleteJob(index):
-    jobs_handler.deleteJob(index)
+def deleteJob(job):
+    jobs_handler.deleteJob(job)
+    loadJobs()
     listJobs()
 
 
